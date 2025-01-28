@@ -20,6 +20,8 @@ import { UserModule } from '@user/user.module';
 import ProbeController from '@/probe.controller';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import { join } from 'path';
+import { ProductModule } from './modules/product/product.module';
+import { ThrottlerModule } from '@nestjs/throttler';
 @Module({
   providers: [
     {
@@ -55,6 +57,10 @@ import { join } from 'path';
         PROFILE: Joi.string().valid('local', 'development', 'production', 'ci', 'testing', 'staging').required(),
         PORT: Joi.number().required(),
       }),
+    }),
+    ThrottlerModule.forRoot({
+      ttl: 60,
+      limit: 10,
     }),
     LoggerModule.forRoot(),
     TypeOrmModule.forRootAsync({
@@ -109,6 +115,8 @@ import { join } from 'path';
         index: false,
       },
     }),
+
+    ProductModule,
   ],
   controllers: [HealthController, ProbeController],
 })
