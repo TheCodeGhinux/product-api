@@ -58,10 +58,12 @@ import { ThrottlerModule } from '@nestjs/throttler';
         PORT: Joi.number().required(),
       }),
     }),
-    ThrottlerModule.forRoot({
-      ttl: 60,
-      limit: 10,
-    }),
+    ThrottlerModule.forRoot([
+      {
+        ttl: 60000,
+        limit: 10,
+      },
+    ]),
     LoggerModule.forRoot(),
     TypeOrmModule.forRootAsync({
       useFactory: async () => ({
