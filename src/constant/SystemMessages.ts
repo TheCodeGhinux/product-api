@@ -11,8 +11,9 @@ export const LOGIN_SUCCESSFUL = 'Login successful';
 export const LOGIN_ERROR = 'An error occurred during login';
 export const FORBIDDEN_ACTION = 'You do not have the permission to perform this action';
 export const RESOURCE_NOT_FOUND = resource => {
-  return `${resource} does not exist`;
+  return `${resource} does not found`;
 };
 
 export const BAD_REQUEST = 'Bad request error';
+export const UNAUTHORIZED_MESSAGE = 'Unauthorized error';
 export const INVALID_CREDENTIALS = 'Invalid credentials';
