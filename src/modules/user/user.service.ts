@@ -9,16 +9,16 @@ import {
 } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { UpdateUserDto } from '@user/dto/update-user-dto';
-import UserResponseDTO from '@user/dto/user-response.dto';
-import { User, UserType } from '@user/entities/user.entity';
-import { UserPayload } from '@user/interfaces/user-payload.interface';
-import CreateNewUserOptions from '@user/options/CreateNewUserOptions';
-import UpdateUserRecordOption from '@user/options/UpdateUserRecordOption';
-import UserIdentifierOptionsType from '@user/options/UserIdentifierOptions';
-import { pick } from '@helpers/pick';
-import * as SYS_MSG from '@constant/SystemMessages';
-import { CustomHttpException } from '@helpers/custom-http-filter';
+import { UpdateUserDto } from './dto/update-user-dto';
+import UserResponseDTO from './dto/user-response.dto';
+import { User, UserType } from './entities/user.entity';
+import { UserPayload } from './interfaces/user-payload.interface';
+import CreateNewUserOptions from './options/CreateNewUserOptions';
+import UpdateUserRecordOption from './options/UpdateUserRecordOption';
+import UserIdentifierOptionsType from './options/UserIdentifierOptions';
+import { pick } from '../../helpers/pick';
+import * as SYS_MSG from '../../constant/SystemMessages';
+import { CustomHttpException } from '../../helpers/custom-http-filter';
 
 @Injectable()
 export default class UserService {
