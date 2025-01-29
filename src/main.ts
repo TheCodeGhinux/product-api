@@ -35,8 +35,8 @@ async function bootstrap() {
   app.useGlobalInterceptors(new ResponseInterceptor());
 
   const options = new DocumentBuilder()
-    .setTitle('HNG Boilerplate')
-    .setDescription('API Doc from team Starlight')
+    .setTitle('Scelloo product api')
+    .setDescription('API Doc for managing products')
     .setVersion('1.0')
     .addBearerAuth()
     .build();

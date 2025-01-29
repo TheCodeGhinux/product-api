@@ -11,7 +11,7 @@ import {
   OneToMany,
   OneToOne,
 } from 'typeorm';
-import { AbstractBaseEntity } from '@entities/base.entity';
+import { AbstractBaseEntity } from '../../../entities/base.entity';
 
 export enum UserType {
   SUPER_ADMIN = 'super-admin',

@@ -1,5 +1,5 @@
 import { Column, Entity, PrimaryGeneratedColumn, CreateDateColumn, DeleteDateColumn } from 'typeorm';
-import { AbstractBaseEntity } from '@entities/base.entity';
+import { AbstractBaseEntity } from '../../../entities/base.entity';
 
 @Entity('products')
 export class Product extends AbstractBaseEntity {
