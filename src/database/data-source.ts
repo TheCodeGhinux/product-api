@@ -5,6 +5,7 @@ import * as dotenv from 'dotenv';
 dotenv.config();
 
 const isDevelopment = process.env.NODE_ENV === 'development';
+const sslOption = process.env.DB_SSL || false;
 
 const dataSource = new DataSource({
   type: process.env.DB_TYPE as 'postgres',
@@ -16,7 +17,7 @@ const dataSource = new DataSource({
   migrations: [process.env.DB_MIGRATIONS],
   synchronize: isDevelopment,
   migrationsTableName: 'migrations',
-  ssl: process.env.DB_SSL === 'true',
+  ssl: sslOption === 'require' ? { rejectUnauthorized: false } : sslOption === 'true',
 });
 export async function initializeDataSource() {
   if (!dataSource.isInitialized) {
