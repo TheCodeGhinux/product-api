@@ -61,31 +61,6 @@ export default class RegistrationController {
     return this.authService.loginUser(loginDto, res);
   }
 
-  @skipAuth()
-  @Post('google')
-  @GoogleAuthDocs()
-  @HttpCode(200)
-  async googleAuth(@Body() body: GoogleAuthPayload, @Query('mobile') isMobile: string) {
-    return this.authService.googleAuth({ googleAuthPayload: body, isMobile });
-  }
-
-  @skipAuth()
-  @HttpCode(200)
-  @RequestVerificationTokenDocs()
-  @Post('request/token')
-  async requestVerificationToken(@Body() body: { email: string }) {
-    const { email } = body;
-    return this.authService.requestSignInToken({ email });
-  }
-
-  @skipAuth()
-  @SignInTokenDocs()
-  @Post('magic-link')
-  @HttpCode(200)
-  public async signInToken(@Body() body: RequestSigninTokenDto) {
-    return await this.authService.requestSignInToken(body);
-  }
-
   @ChangePasswordDocs()
   @HttpCode(200)
   @Post('change-password')
