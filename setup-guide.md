@@ -7,8 +7,8 @@
 - Fork and clone the repository
 
 ```bash
-git clone https://github.com/hngprojects/hng_boilerplate_nestjs.git
-cd hng_boilerplate_nestjs
+git clone https://github.com/thecodeghinux/product-api.git
+cd product-api
 git checkout chore/database-setup
 ```
 
@@ -165,8 +165,8 @@ http://localhost:3008/api/v1/seed/users
 - Fork and clone the repository
 
 ```bash
-git clone https://github.com/hngprojects/hng_boilerplate_nestjs.git
-cd hng_boilerplate_nestjs
+git clone https://github.com/thecodeghinux/product-api.git
+cd product-api
 git checkout chore/database-setup
 ```
 
